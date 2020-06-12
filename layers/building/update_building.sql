@@ -7,7 +7,6 @@ DROP TRIGGER IF EXISTS trigger_flag ON osm_building_polygon;
 --function returning recordset for matview
 --returning recordset of buildings aggregates by zres 14, with removed small
 --holes and with removed small buildings/blocks
---
 
 CREATE OR REPLACE FUNCTION osm_building_block_gen1()
     RETURNS table
