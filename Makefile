@@ -23,7 +23,7 @@ USE_PRELOADED_IMAGE ?=
 PPORT ?= 8090
 export PPORT
 # Local port to use with tileserver
-TPORT ?= 8080
+TPORT ?= 9090
 export TPORT
 
 # Allow a custom docker-compose project name
@@ -167,7 +167,7 @@ define HELP_MESSAGE
 
 Hints for testing areas
   make list-geofabrik                  # list actual geofabrik OSM extracts for download -> <<your-area>>
-  ./quickstart.sh <<your-area>>        # example:  ./quickstart.sh madagascar
+  ./init.sh <<your-area>>        		# example:  ./init.sh madagascar
 
 Hints for designers:
   make start-maputnik                  # start Maputnik Editor + dynamic tile server [ see $(OMT_HOST):8088 ]
@@ -183,14 +183,14 @@ Hints for developers:
   make generate-qa                     # statistics for a given layer's field
   make generate-tiles                  # generate vector tiles based on .env settings
   cat  .env                            # list PG database and MIN_ZOOM and MAX_ZOOM information
-  cat  quickstart.log                  # transcript of the last ./quickstart.sh run
+  cat  init.log                  		# transcript of the last ./init.sh run
   make help                            # help about available commands
 
 Hints for downloading & importing data:
   make list-geofabrik                  # list actual geofabrik OSM extracts for download
   make list-bbbike                     # list actual BBBike OSM extracts for download
-  make download area=albania           # download OSM data from any source       and create config file
-  make download-geofabrik area=albania # download OSM data from geofabrik.de     and create config file
+  make download area=north-carolina    # download OSM data from any source       and create config file
+  make download-geofabrik area=utah    # download OSM data from geofabrik.de     and create config file
   make download-osmfr area=asia/qatar  # download OSM data from openstreetmap.fr and create config file
   make download-bbbike area=Amsterdam  # download OSM data from bbbike.org       and create config file
   make import-data                     # Import data from OpenStreetMapData, Natural Earth and OSM Lake Labels.
